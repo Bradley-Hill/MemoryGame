@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { fetchCardData } from "./utils/api";
 import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
