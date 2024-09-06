@@ -14,22 +14,14 @@ interface CardData {
   };
 }
 
-interface HomeProps {
-  initialCardData: CardData | null;
-}
-
-export default function Home({ initialCardData }: HomeProps) {
-  const [cardData, setCardData] = React.useState<CardData | null>(
-    initialCardData
-  );
+export default function Home() {
+  const [cardData, setCardData] = React.useState<CardData | null>(null);
 
   useEffect(() => {
-    if (!initialCardData) {
-      fetchCardData("Black Lotus")
-        .then((data) => setCardData(data))
-        .catch((error) => console.error("Error fetching card data: ", error));
-    }
-  }, [initialCardData]);
+    fetchCardData("Urza")
+      .then((data) => setCardData(data))
+      .catch((error) => console.error("Error fetching card data: ", error));
+  }, []);
 
   if (!cardData) {
     return <div>Error loading card data</div>;

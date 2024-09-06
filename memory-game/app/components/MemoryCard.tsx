@@ -7,14 +7,14 @@ interface MemoryCardProps {
 }
 
 const MemoryCard: React.FC<MemoryCardProps> = ({ name, imageUrl }) => {
-  const width = 200;
-  const height = 200;
+  const width = 250;
+  const height = 250;
   return (
     <div className="MemoryCard">
       <Image
         src={imageUrl}
         alt={name}
-        layout="responsive"
+        // layout="intrinsic"
         width={width}
         height={height}
       />
