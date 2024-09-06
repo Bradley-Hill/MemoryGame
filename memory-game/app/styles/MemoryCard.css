@@ -1,0 +1,10 @@
+.MemoryCard {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem;
+}
+
+.MemoryCard h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
