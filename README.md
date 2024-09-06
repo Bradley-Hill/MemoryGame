@@ -8,14 +8,6 @@ API for use : https://scryfall.com/docs/api
 
 ### Stage 2: Basic Structure and Routing
 
-1. **Create App Directory Structure**
-
-   - Set up the `app/` directory with subdirectories for `api`, `components`, `styles`, `utils`, `hooks`, and `context`.
-
-2. **Create Main Page**
-
-   - Create `page.tsx` as the main entry point for the application.
-
 3. **Set Up API Route**
    - Create `api/cards/route.ts` to handle fetching card data from the Scryfall API.
 
