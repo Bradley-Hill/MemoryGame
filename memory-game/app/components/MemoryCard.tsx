@@ -1,24 +1,29 @@
 import React from "react";
 import Image from "next/image";
 
-interface MemoryCardProps {
+interface CardData {
   name: string;
-  imageUrl: string;
+  image_uris: {
+    art_crop: string;
+  };
 }
 
-const MemoryCard: React.FC<MemoryCardProps> = ({ name, imageUrl }) => {
+interface MemoryCardProps {
+  card: CardData;
+}
+
+const MemoryCard: React.FC<MemoryCardProps> = ({ card }) => {
   const width = 250;
   const height = 250;
   return (
     <div className="MemoryCard">
       <Image
-        src={imageUrl}
-        alt={name}
-        // layout="intrinsic"
+        src={card.image_uris.art_crop}
+        alt={card.name}
         width={width}
         height={height}
       />
-      <h2>{name}</h2>
+      <h2>{card.name}</h2>
     </div>
   );
 };
