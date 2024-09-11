@@ -16,7 +16,7 @@ interface CardData {
 export default function Home() {
   const [cardData, setCardData] = React.useState<CardData[]>([]);
   const [currentScore, setCurrentScore] = React.useState(0);
-  // const [bestScore, setBestScore] = React.useState(0);
+  const [bestScore, setBestScore] = React.useState(0);
   const [clickedCards, setClickedCards] = React.useState<string[]>([]);
 
   const cardArray = useMemo(
@@ -73,7 +73,11 @@ export default function Home() {
       setCurrentScore(0);
       setClickedCards([]);
     } else {
-      setCurrentScore(currentScore + 1);
+      setCurrentScore((previousScore) => {
+        const newScore = previousScore + 1;
+        setBestScore(newScore);
+        return newScore;
+      });
       setClickedCards([...clickedCards, cardName]);
     }
     setCardData(shuffleArray(cardData));
@@ -83,7 +87,7 @@ export default function Home() {
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-4">Magic Memory Game</h1>
       <DifficultySelector />
-      <ScoreBoard currentScore={currentScore} />
+      <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
       <GameBoard cards={cardData} onCardClick={handleCardClick} />
     </div>
   );
