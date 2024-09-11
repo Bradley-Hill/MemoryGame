@@ -11,13 +11,14 @@ interface CardData {
 
 interface MemoryCardProps {
   card: CardData;
+  onCardClick: (cardName: string) => void;
 }
 
-const MemoryCard: React.FC<MemoryCardProps> = ({ card }) => {
+const MemoryCard: React.FC<MemoryCardProps> = ({ card, onCardClick }) => {
   const width = 250;
   const height = 250;
   return (
-    <div className="MemoryCard">
+    <div className="MemoryCard" onClick={() => onCardClick(card.name)}>
       <Image
         src={card.image_uris.art_crop}
         alt={card.name}

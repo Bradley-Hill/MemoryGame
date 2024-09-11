@@ -11,13 +11,14 @@ interface CardData {
 
 interface GameBoardProps {
   cards: CardData[];
+  onCardClick: (cardName: string) => void;
 }
 
-const GameBoard: React.FC<GameBoardProps> = ({ cards }) => {
+const GameBoard: React.FC<GameBoardProps> = ({ cards, onCardClick }) => {
   return (
     <div className="game-board">
       {cards.map((card: CardData) => (
-        <MemoryCard key={card.name} card={card} />
+        <MemoryCard key={card.name} card={card} onCardClick={onCardClick} />
       ))}
     </div>
   );
