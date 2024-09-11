@@ -5,8 +5,9 @@ import { fetchCardData } from "./utils/api";
 import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
 import DifficultySelector from "./components/DifficultySelector";
+import { shuffleArray } from "./utils/utilFunctions";
 
-interface CardData {
+export interface CardData {
   name: string;
   image_uris: {
     art_crop: string;
@@ -55,18 +56,6 @@ export default function Home() {
   if (cardData.length === 0) {
     return <div>Loading card data...</div>;
   }
-
-  const shuffleArray = (array: CardData[]) => {
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [
-        shuffledArray[j],
-        shuffledArray[i],
-      ];
-    }
-    return shuffledArray;
-  };
 
   const handleCardClick = (cardName: string) => {
     if (clickedCards.includes(cardName)) {

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MemoryCard from "./MemoryCard";
 import "../styles/GameBoard.css";
+import { shuffleArray } from "../utils/utilFunctions";
 
 interface CardData {
   name: string;
@@ -15,9 +16,15 @@ interface GameBoardProps {
 }
 
 const GameBoard: React.FC<GameBoardProps> = ({ cards, onCardClick }) => {
+  const [shuffledCards, setShuffledCards] = useState<CardData[]>([]);
+
+  useEffect(() => {
+    setShuffledCards(shuffleArray(cards));
+  }, [cards]);
+
   return (
     <div className="game-board">
-      {cards.map((card: CardData) => (
+      {shuffledCards.map((card: CardData) => (
         <MemoryCard key={card.name} card={card} onCardClick={onCardClick} />
       ))}
     </div>
