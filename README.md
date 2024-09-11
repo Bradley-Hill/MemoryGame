@@ -8,26 +8,6 @@ API for use : https://scryfall.com/docs/api
 
 ### Stage 2: Basic Structure and Routing
 
-3. **Set Up API Route**
-   - Create `api/cards/route.ts` to handle fetching card data from the Scryfall API.
-
-### Stage 3: UI Components
-
-1. **Card Component**
-
-   - Create `Card.tsx` to display individual cards.
-   - Style the component using `Card.module.css`.
-
-2. **GameBoard Component**
-
-   - Create `GameBoard.tsx` to display the game board with cards.
-   - Style the component using `GameBoard.module.css`.
-
-3. **ScoreBoard Component**
-
-   - Create `ScoreBoard.tsx` to display the current and best scores.
-   - Style the component using `ScoreBoard.module.css`.
-
 4. **DifficultySelector Component**
    - Create `DifficultySelector.tsx` to allow users to select the game difficulty.
    - Style the component using `DifficultySelector.module.css`.
