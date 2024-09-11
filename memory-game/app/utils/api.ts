@@ -16,25 +16,23 @@ export const fetchCardData = async (cardName: string) => {
       },
     });
     return response.data;
-  } catch (error: any) {
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.error("Error fetching card data:", error.response.data);
-      throw new Error(
-        `Error fetching card data: ${error.response.data.details}`
-      );
-    } else if (error.request) {
-      // The request was made but no response was received
-      console.error(
-        "Error fetching card data: No response received",
-        error.request
-      );
-      throw new Error("Error fetching card data: No response received");
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.error("Error fetching card data:", error.message);
-      throw new Error(`Error fetching card data: ${error.message}`);
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        console.error("Error fetching card data:", error.response.data);
+        throw new Error(
+          `Error fetching card data: ${error.response.data.details}`
+        );
+      } else if (error.request) {
+        console.error(
+          "Error fetching card data: No response received",
+          error.request
+        );
+        throw new Error("Error fetching card data: No response received");
+      } else {
+        console.error("Error fetching card data:", error.message);
+        throw new Error(`Error fetching card data: ${error.message}`);
+      }
     }
   }
 };

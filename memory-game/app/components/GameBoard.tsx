@@ -1,5 +1,6 @@
 import React from "react";
 import MemoryCard from "./MemoryCard";
+import "../styles/GameBoard.css";
 
 interface CardData {
   name: string;
