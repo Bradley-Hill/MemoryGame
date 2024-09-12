@@ -1,67 +1,45 @@
-# MemoryGame
+# Memory Game
 
-Simple Memory Game with React/NextJS
+This is a simple memory game built with Next.js. The game uses the Scryfall API to fetch images for the cards.
 
-API for use : https://scryfall.com/docs/api
+## Features
 
-# Rough PLan for the project:
+- Fetches card images from the Scryfall API
+- Simple and intuitive gameplay
+- Responsive design
 
-### Stage 2: Basic Structure and Routing
+## Installation
 
-4. **DifficultySelector Component**
-   - Create `DifficultySelector.tsx` to allow users to select the game difficulty.
-   - Style the component using `DifficultySelector.module.css`.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Bradley-Hill/MemoryGame.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd MemoryGame
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-### Stage 4: State Management
+## Usage
 
-1. **Game State Hook**
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+2. Open your browser and go to `http://localhost:3000` to play the game.
 
-   - Create `useGameState.ts` to manage the game state, including the current score, best score, and clicked cards.
+## Contributing
 
-2. **Game Context**
-   - Create `GameContext.tsx` to provide game state across components.
+Contributions are welcome! Please open an issue or submit a pull request.
 
-### Stage 5: Game Logic
+## License
 
-1. **Utility Functions**
+This project is licensed under the MIT License.
 
-   - Create `gameLogic.ts` in the `utils/` directory to handle game logic such as shuffling cards and checking for duplicates.
+## Acknowledgements
 
-2. **API Utility**
-   - Create `api.ts` in the `utils/` directory to handle API calls to the Scryfall API.
-
-### Stage 6: Integration and Testing
-
-1. **Integrate Components**
-
-   - Integrate all components (`Card`, `GameBoard`, `ScoreBoard`, `DifficultySelector`) into `page.tsx`.
-
-2. **Fetch and Display Data**
-
-   - Use the API route to fetch card data and display it on the game board.
-
-3. **Implement Game Logic**
-
-   - Implement the game logic to handle card clicks, update scores, and check for previously clicked cards.
-
-4. **Testing**
-   - Test the application thoroughly to ensure all components and logic work as expected.
-
-### Stage 7: Final Touches
-
-1. **Styling and Responsiveness**
-
-   - Ensure the application is styled properly and is responsive across different devices.
-
-2. **Performance Optimization**
-
-   - Optimize the application for performance, including lazy loading images and minimizing API calls.
-
-3. **Documentation**
-
-   - Update the [`README.md`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FUsers%2FKingm%2FDocuments%2FCodeRepos%2FMemoryGame%2FREADME.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "c:\\Users\Kingm\Documents\CodeRepos\MemoryGame\README.md") with instructions on how to set up and run the project.
-
-4. **Deployment**
-   - Deploy the application to a hosting service like Vercel.
-
-By following these stages and steps, you can systematically build your Next.js memory game with TypeScript and Tailwind CSS.
+- [Next.js](https://nextjs.org/)
+- [Scryfall API](https://scryfall.com/docs/api)
